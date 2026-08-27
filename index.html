@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burns Effect — Slider Ken Burns continuo y reutilizable</title>
+  <meta name="description" content="Slider de bienvenida con efecto Ken Burns continuo: el zoom nunca se detiene y el crossfade no tiene cortes secos.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dystopia Workshop">
+  <meta property="og:title" content="Burns Effect — Slider Ken Burns continuo y reutilizable">
+  <meta property="og:description" content="Slider de bienvenida con efecto Ken Burns continuo: el zoom nunca se detiene y el crossfade no tiene cortes secos.">
+  <meta property="og:url" content="https://manuelfernandezdg.github.io/burnsEffect/">
+  <meta property="og:image" content="https://manuelfernandezdg.github.io/burnsEffect/assets/img/workshop-social.jpg">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Burns Effect — Slider Ken Burns continuo y reutilizable">
+  <meta name="twitter:description" content="Slider de bienvenida con efecto Ken Burns continuo: el zoom nunca se detiene y el crossfade no tiene cortes secos.">
+  <meta name="twitter:image" content="https://manuelfernandezdg.github.io/burnsEffect/assets/img/workshop-social.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="stylesheet" href="css/burns-effect.css?v=2">
+  <link rel="stylesheet" href="css/demo.css?v=2">
+  <script src="js/burns-effect.js?v=2" defer></script>
+  <script src="js/app.js?v=2" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="page__head">
+      <p class="eyebrow">Dystopia Workshop</p>
+      <h1 class="page__title">Burns Effect</h1>
+      <p class="page__lead">Slider de bienvenida con efecto Ken Burns <strong>continuo</strong>: el zoom nunca se detiene y el crossfade no tiene cortes secos.</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section__title">Demo</h2>
+      <div id="demo" class="slider-box burns"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Segunda variante</h2>
+      <p class="page__lead">Zoom más rápido (6s) y crossfade más largo (2.2s).</p>
+      <div id="demo-2" class="slider-box slider-box--small burns"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Generador</h2>
+      <p class="page__lead">Ajustá los parámetros y la lista de imágenes. Al aplicar se actualiza la vista previa y se genera el código para que lo uses donde quieras.</p>
+      <div class="panel">
+        <div class="grid">
+          <div class="field">
+            <label class="field__label" for="opt-delay">Delay entre slides (ms)</label>
+            <input class="field__input" type="number" id="opt-delay" value="5000" min="500" step="500">
+          </div>
+          <div class="field">
+            <label class="field__label" for="opt-transition">Crossfade (ms)</label>
+            <input class="field__input" type="number" id="opt-transition" value="1500" min="0" step="100">
+          </div>
+          <div class="field">
+            <label class="field__label" for="opt-zoom">Duración del zoom (ms)</label>
+            <input class="field__input" type="number" id="opt-zoom" value="10000" min="1000" step="500">
+          </div>
+          <div class="field">
+            <label class="field__label" for="opt-timer">Barra de progreso</label>
+            <input class="field__input" type="checkbox" id="opt-timer" checked>
+          </div>
+        </div>
+
+        <label class="field__label field__label--block" for="opt-images">Imágenes (una URL por línea)</label>
+        <textarea class="field__input field__input--area" id="opt-images">img/001.webp
+img/002.webp
+img/003.webp
+img/004.webp
+img/005.webp</textarea>
+
+        <div class="row">
+          <button id="btn-apply" class="btn btn--accent" type="button">Aplicar y generar código</button>
+          <button id="btn-copy" class="btn btn--secondary" type="button">Copiar código</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Código generado</h2>
+      <pre id="output" class="code-block"><code>// Aplicá "Aplicar y generar código" para ver tu snippet aquí.</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer app">
+    <div class="footer__brand">
+      <img class="footer__logo" src="assets/img/logo.jpg" alt="Logo de Dystopia Workshop">
+      <span class="footer__name">Dystopia Workshop</span>
+    </div>
+    <a class="footer__link" href="https://github.com/manuelfernandezdg/burnsEffect" target="_blank" rel="noopener noreferrer">github.com/manuelfernandezdg/burnsEffect</a>
+  </footer>
+</body>
+</html>

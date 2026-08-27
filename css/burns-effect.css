@@ -1,0 +1,56 @@
+.burns {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.burns-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity var(--slider-transicion, 1000ms) ease;
+  will-change: transform, opacity;
+  animation: burns-zoom-pan var(--slider-zoom, 10000ms) ease-in-out infinite alternate;
+}
+
+.burns-slide--active {
+  opacity: 1;
+}
+
+.burns-slide--pan-a { transform-origin: 25% 25%; }
+.burns-slide--pan-b { transform-origin: 75% 25%; }
+.burns-slide--pan-c { transform-origin: 25% 75%; }
+.burns-slide--pan-d { transform-origin: 75% 75%; }
+
+@keyframes burns-zoom-pan {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+.burns-timer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.burns-timer__bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .burns-slide {
+    animation: none;
+  }
+}
