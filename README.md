@@ -33,16 +33,6 @@ burnsEffect/
 └── README.md
 ```
 
-## Sistema de diseño
-
-Este proyecto sigue el benchmark de Dystopia Workshop (`../DESIGN.md`): `demo.css`
-usa `@layer reset, tokens, base, components`, BEM plano y los tokens canónicos
-(azul `hsl(214,…)` + naranja `hsl(22,…)`). La demo tiene footer de marca.
-
-**Excepción documentada:** `burns-effect.css` / `burns-effect.js` son un
-componente reutilizable aparte de la demo (no usan el sistema de tokens del
-benchmark, son autocontenidos). Ver `AGENTS.md`.
-
 ## Uso mínimo
 
 ```html
@@ -81,11 +71,6 @@ instance.destroy();     // detiene y limpia el slider
 ```
 
 `target` puede ser un selector (`'#id'`) o un elemento del DOM.
-
-## Cache-busting
-
-Los `<link>` y `<script>` usan `?v=`. Subí ese número en todos los `?v=` cuando
-actualices los archivos para forzar la recarga en el cliente/CDN.
 
 ## Ejecutar la demo
 
