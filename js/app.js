@@ -17,14 +17,6 @@
     timer: true,
   });
 
-  initBurnsEffect('#demo-2', {
-    images: IMAGES,
-    delay: 4000,
-    transition: 2200,
-    zoom: 6000,
-    timer: true,
-  });
-
   var fields = {
     delay: document.getElementById('opt-delay'),
     transition: document.getElementById('opt-transition'),
@@ -36,6 +28,12 @@
   var output = document.getElementById('output');
   var btnApply = document.getElementById('btn-apply');
   var btnCopy = document.getElementById('btn-copy');
+
+  ['delay', 'transition', 'zoom'].forEach(function (key) {
+    var input = fields[key];
+    var display = input.parentElement.querySelector('.ctrl__value');
+    input.addEventListener('input', function () { display.textContent = input.value; });
+  });
 
   function readImages() {
     return fields.images.value
@@ -64,19 +62,19 @@
       .join('\n');
 
     return [
-      '<span class="tok-sel">&lt;div</span> <span class="tok-prop">id</span>=<span class="tok-val">"burns"</span> <span class="tok-prop">class</span>=<span class="tok-val">"burns"</span> <span class="tok-prop">style</span>=<span class="tok-val">"height:60vh"</span><span class="tok-sel">&gt;</span>&lt;/div&gt;',
+      '<span class="tok-sel">&lt;div</span> <span class="tok-prop">id</span>=<span class="tok-val">"burns"</span> <span class="tok-prop">class</span>=<span class="tok-val">"burns"</span> <span class="tok-prop">style</span>=<span class="tok-val">"height:60vh"</span><span class="tok-sel">&gt;&lt;/div&gt;</span>',
       '',
       '<span class="tok-sel">&lt;link</span> <span class="tok-prop">rel</span>=<span class="tok-val">"stylesheet"</span> <span class="tok-prop">href</span>=<span class="tok-val">"css/burns-effect.css?v=2"</span><span class="tok-sel">&gt;</span>',
-      '<span class="tok-sel">&lt;script</span> <span class="tok-prop">src</span>=<span class="tok-val">"js/burns-effect.js?v=2"</span><span class="tok-sel">&gt;</span>&lt;/script&gt;',
+      '<span class="tok-sel">&lt;script</span> <span class="tok-prop">src</span>=<span class="tok-val">"js/burns-effect.js?v=2"</span><span class="tok-sel">&gt;&lt;/script&gt;</span>',
       '<span class="tok-sel">&lt;script&gt;</span>',
       '  <span class="tok-sel">initBurnsEffect</span>(<span class="tok-val">\'#burns\'</span>, {',
       '    <span class="tok-prop">images</span>: [',
       imagesLiteral,
       '    ],',
-      '    <span class="tok-prop">delay</span>: ' + opts.delay + ',',
-      '    <span class="tok-prop">transition</span>: ' + opts.transition + ',',
-      '    <span class="tok-prop">zoom</span>: ' + opts.zoom + ',',
-      '    <span class="tok-prop">timer</span>: ' + opts.timer + ',',
+      '    <span class="tok-prop">delay</span>: <span class="tok-val">' + opts.delay + '</span>,',
+      '    <span class="tok-prop">transition</span>: <span class="tok-val">' + opts.transition + '</span>,',
+      '    <span class="tok-prop">zoom</span>: <span class="tok-val">' + opts.zoom + '</span>,',
+      '    <span class="tok-prop">timer</span>: <span class="tok-val">' + opts.timer + '</span>,',
       '  });',
       '<span class="tok-sel">&lt;/script&gt;</span>',
     ].join('\n');
